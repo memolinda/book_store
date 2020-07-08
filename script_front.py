@@ -46,7 +46,10 @@ e4=Entry(window, textvariable=e4_value)
 e4.grid(row=1, column=3)
 
 list1 = Listbox(window, height=6, width=35)
-list1.grid(row=2, column=0, rowspan=5, columnspan=2)
+list1.grid(row=2, column=0, rowspan=6, columnspan=2)
+
+sb = Scrollbar(window)
+sb.grid(row=2, column=2, rowspan=6)
 
 b1=Button(window, text="View all", width=12)
 b1.grid(row=2, column=3)
