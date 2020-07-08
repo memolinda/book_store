@@ -51,6 +51,9 @@ list1.grid(row=2, column=0, rowspan=6, columnspan=2)
 sb = Scrollbar(window)
 sb.grid(row=2, column=2, rowspan=6)
 
+list1.configure(yscrollcommand=sb.set)
+sb.configure(command=list1.yview)
+
 b1=Button(window, text="View all", width=12)
 b1.grid(row=2, column=3)
 
