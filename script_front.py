@@ -79,10 +79,10 @@ b2.grid(row=3, column=3)
 b3=Button(window, text="Add entry", width=12, command=insert_command)
 b3.grid(row=4, column=3)
 
-b4=Button(window, text="Update", width=12)
+b4=Button(window, text="Update selected", width=12)
 b4.grid(row=5, column=3)
 
-b5=Button(window, text="Delete", width=12)
+b5=Button(window, text="Delete selected", width=12, command=)
 b5.grid(row=6, column=3)
 
 b6=Button(window, text="Close", width=12)
