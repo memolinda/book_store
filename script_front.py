@@ -13,6 +13,12 @@ Close
 """
 
 from tkinter import *
+import script_back
+
+def view_comand():
+    for row in script_back.view():
+        list1.insert(END, row)
+
 
 window = Tk()
 window.title("Book storage")
@@ -54,7 +60,7 @@ sb.grid(row=2, column=2, rowspan=6)
 list1.configure(yscrollcommand=sb.set)
 sb.configure(command=list1.yview)
 
-b1=Button(window, text="View all", width=12)
+b1=Button(window, text="View all", width=12, command=view_comand)
 b1.grid(row=2, column=3)
 
 b2=Button(window, text="Search entry", width=12)

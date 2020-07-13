@@ -46,6 +46,6 @@ def update(id, title, author, year, isbn):
 
 
 connect()
-
+print(view())
 
 # print(search(author='John Tablet'))
