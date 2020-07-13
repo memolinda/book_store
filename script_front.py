@@ -25,6 +25,11 @@ def search_command():
     for row in script_back.search(e1_value.get(), e2_value.get(), e3_value.get(), e4_value.get()):
         list1.insert(END, row)
 
+def insert_command():
+    script_back.insert(e1_value.get(), e2_value.get(), e3_value.get(), e4_value.get())
+    list1.delete(0,END)
+    list1.insert(END,(e1_value.get(), e2_value.get(), e3_value.get(), e4_value.get()))
+
 window = Tk()
 window.title("Book storage")
 
@@ -71,7 +76,7 @@ b1.grid(row=2, column=3)
 b2=Button(window, text="Search entry", width=12, command=search_command)
 b2.grid(row=3, column=3)
 
-b3=Button(window, text="Add entry", width=12)
+b3=Button(window, text="Add entry", width=12, command=insert_command)
 b3.grid(row=4, column=3)
 
 b4=Button(window, text="Update", width=12)
