@@ -30,6 +30,14 @@ def insert_command():
     list1.delete(0,END)
     list1.insert(END,(e1_value.get(), e2_value.get(), e3_value.get(), e4_value.get()))
 
+def get_selected_row(event):
+    global selected_tuple    #to be able to call the local variable in the global program
+    index=list1.curselection()[0]
+    selected_tuple=list1.get(index)
+
+def delete_command():
+    script_back.delete(selected_tuple[0])
+
 window = Tk()
 window.title("Book storage")
 
@@ -70,6 +78,8 @@ sb.grid(row=2, column=2, rowspan=6)
 list1.configure(yscrollcommand=sb.set)
 sb.configure(command=list1.yview)
 
+list1.bind('<<ListboxSelect>>', get_selected_row)
+
 b1=Button(window, text="View all", width=12, command=view_command)
 b1.grid(row=2, column=3)
 
@@ -82,7 +92,7 @@ b3.grid(row=4, column=3)
 b4=Button(window, text="Update selected", width=12)
 b4.grid(row=5, column=3)
 
-b5=Button(window, text="Delete selected", width=12, command=)
+b5=Button(window, text="Delete selected", width=12, command=delete_command)
 b5.grid(row=6, column=3)
 
 b6=Button(window, text="Close", width=12)
