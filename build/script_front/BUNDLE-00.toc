@@ -1,0 +1,3 @@
+([('script_front',
+   '/Users/lindagiacomozzi/Documents/Pyhton_course/book_program/dist/script_front',
+   'EXECUTABLE')],)
