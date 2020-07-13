@@ -15,10 +15,15 @@ Close
 from tkinter import *
 import script_back
 
-def view_comand():
+def view_command():
+    list1.delete(0,END)
     for row in script_back.view():
         list1.insert(END, row)
 
+def search_command():
+    list1.delete(0,END)
+    for row in script_back.search(e1_value.get(), e2_value.get(), e3_value.get(), e4_value.get()):
+        list1.insert(END, row)
 
 window = Tk()
 window.title("Book storage")
@@ -60,10 +65,10 @@ sb.grid(row=2, column=2, rowspan=6)
 list1.configure(yscrollcommand=sb.set)
 sb.configure(command=list1.yview)
 
-b1=Button(window, text="View all", width=12, command=view_comand)
+b1=Button(window, text="View all", width=12, command=view_command)
 b1.grid(row=2, column=3)
 
-b2=Button(window, text="Search entry", width=12)
+b2=Button(window, text="Search entry", width=12, command=search_command)
 b2.grid(row=3, column=3)
 
 b3=Button(window, text="Add entry", width=12)
